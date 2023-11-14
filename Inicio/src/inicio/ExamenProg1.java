@@ -1,5 +1,3 @@
-package inicio;
-
 /**
  * Primer examen de Programación - DAM
  * @autor Adrian Herrera Camino

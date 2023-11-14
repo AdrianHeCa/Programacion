@@ -1,5 +1,3 @@
-package inicio;
-
 import java.util.Scanner;
 
 public class Practica_26 {
