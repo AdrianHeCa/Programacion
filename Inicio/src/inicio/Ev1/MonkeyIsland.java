@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class MonkeyIsland {
+    public static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         Random random = new Random();
 
@@ -89,7 +91,6 @@ public class MonkeyIsland {
     }
     
     private static int elegirFrase(String[] frases, String mensaje) {
-        Scanner input = new Scanner(System.in);
         System.out.println(mensaje);
         for (int i = 0; i < frases.length; i++) {
             System.out.println((i + 1) + ". " + frases[i]);

@@ -89,7 +89,7 @@ public class TorneoPadelParejas {
     }
 
     private static void generarRonda() {
-        List<Pareja> parejasDisponibles = new ArrayList<>(parejasTorneo);
+        // List<Pareja> parejasDisponibles = new ArrayList<>(parejasTorneo);
         Partido partido;
 
         int i = 0;

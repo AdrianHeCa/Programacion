@@ -25,6 +25,10 @@ public class Personaje {
         this.mano = new ArrayList<>();
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public Integer getVida() {
         return vida;
     }
@@ -70,7 +74,7 @@ public class Personaje {
                     mano.remove(carta);
                 }
             } else if (carta.getTipo().equals(TipoCarta.ATURDIR)) {
-                contrincante.aturdir();
+                contrincante.aturdir(carta.getEfecto());
                 energia -= carta.getCoste();
                 mano.remove(carta);
             }
@@ -111,9 +115,9 @@ public class Personaje {
         }
     }
 
-    public void aturdir() {
+    public void aturdir(int daño) {
         aturdido = true;
-        vida--;
+        vida -= daño;
         System.out.println(nombre + " ha sido aturdido");
     }
 

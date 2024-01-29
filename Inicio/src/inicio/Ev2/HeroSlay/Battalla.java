@@ -16,7 +16,7 @@ public class Battalla {
     public static void main(String[] args) {
 
         Carta bofetada = new Carta("Bofetada", TipoCarta.ATAQUE, 2, 1);
-        Carta hostiaGorda = new Carta("Hostia Gorda", TipoCarta.ATAQUE, 4, 3);
+        Carta hostiaGorda = new Carta("Ostia Gorda", TipoCarta.ATAQUE, 4, 3);
         Carta curita = new Carta("Curita", TipoCarta.CURA, 2, 2);
         Carta vendas = new Carta("Vendas", TipoCarta.CURA, 5, 4);
         Carta pedroloALaCabeza = new Carta("Pedrolo a la cabeza", TipoCarta.ATURDIR, 1, 4);
@@ -49,49 +49,43 @@ public class Battalla {
         villano.mostrarInfo();
 
         if (jugadorInicial && !heroe.getAturdido()) {
-            System.out.println("\n---------------------");
-            System.out.println("Turno del Héroe");
-            System.out.println("---------------------");
-
-            if (heroe.getMano().isEmpty()) {
-                heroe.sacarCartaDelMazo();
-                heroe.sacarCartaDelMazo();
-            } else if (heroe.getMano().size() == 1) {
-                heroe.sacarCartaDelMazo();
-            }
-
-            heroe.mostrarMano();
-
-            System.out.println("Tienes " + heroe.getEnergia() + " de Energía");
-            System.out.println("Elige una carta de la mano (1,2):");
-            Carta cartaElegida = heroe.getMano().get(Integer.valueOf(sc.nextLine()) - 1);
-            System.out.println("\n");
-            villano.desaturdir();
-            heroe.usarCarta(cartaElegida, villano);
-            heroe.recuperarEnergia();
-            System.out.println("\n");
+            turno(heroe, villano);
         } else if (!jugadorInicial && !villano.getAturdido()) {
-            System.out.println("\n---------------------");
-            System.out.println("Turno del Villano");
-            System.out.println("---------------------");
-        
-            if (villano.getMano().isEmpty()) {
-                villano.sacarCartaDelMazo();
-                villano.sacarCartaDelMazo();
-            } else if (villano.getMano().size() == 1) {
-                villano.sacarCartaDelMazo();
-            }
-
-            Carta cartaElegida = villano.getMano().get(random.nextInt(0,1));
-            System.out.println("\n");
-            heroe.desaturdir();
-            villano.usarCarta(cartaElegida, heroe);
-            villano.recuperarEnergia();
-            System.out.println("\n");
+            turno(villano, heroe);
         } else {
             System.out.println("\nSe salta la ronda\n");
         }
 
         jugadorInicial = !jugadorInicial;
+    }
+
+    private static void turno(Personaje personaje, Personaje enemigo) {
+        System.out.println("\n---------------------");
+        System.out.println("Turno del " + personaje.getNombre());
+        System.out.println("---------------------");
+
+        if (personaje.getMano().isEmpty()) {
+            personaje.sacarCartaDelMazo();
+            personaje.sacarCartaDelMazo();
+        } else if (personaje.getMano().size() == 1) {
+            personaje.sacarCartaDelMazo();
+        }
+
+        personaje.mostrarMano();
+        
+        Carta cartaElegida;
+        if (personaje.getNombre().equals("Héroe")) {
+            System.out.println("Tienes " + personaje.getEnergia() + " de Energía");
+            System.out.println("Elige una carta de la mano (1,2):");
+            cartaElegida = personaje.getMano().get(Integer.valueOf(sc.nextLine()) - 1);
+        } else {
+            cartaElegida = personaje.getMano().get(random.nextInt(0,1));
+        }
+
+        System.out.println("\n");
+        enemigo.desaturdir();
+        personaje.usarCarta(cartaElegida, enemigo);
+        personaje.recuperarEnergia();
+        System.out.println("\n");
     }
 }
