@@ -1,0 +1,10 @@
+101,Laptop HP Pavilion,800.50
+102,Smartphone Samsung Galaxy S20,1000.75
+103,Cámara Canon EOS Rebel T7,600.25
+104,Libro "Cien años de soledad",20.99
+105,Zapatillas Nike Air Max,120.49
+106,Televisor LG OLED 4K,1500.30
+107,Cafetera Nespresso Vertuo,150.85
+108,Auriculares Sony WH-1000XM4,300.65
+109,Maleta de viaje Samsonite,200.20
+110,Set de herramientas Bosch,50.70
