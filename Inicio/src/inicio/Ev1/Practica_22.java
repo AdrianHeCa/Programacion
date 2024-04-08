@@ -1,3 +1,5 @@
+package Ev1;
+
 import java.util.Scanner;
 
 public class Practica_22 {

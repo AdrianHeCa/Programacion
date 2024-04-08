@@ -1,3 +1,5 @@
+package Ev1;
+
 public class EjercicioArray_3 {
     public static void main(String[] args) {
         int nums[][] = {{1,1,1}, {2,2,2}, {3,3,3}};

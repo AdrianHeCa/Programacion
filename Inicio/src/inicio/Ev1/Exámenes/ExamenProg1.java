@@ -1,4 +1,4 @@
-package Exámenes;
+package Ev1.Exámenes;
 /**
  * Primer examen de Programación - DAM
  * @autor Adrian Herrera Camino

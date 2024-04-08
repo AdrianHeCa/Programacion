@@ -1,3 +1,5 @@
+package Ev1;
+
 public class Practica_16 {
     public static void main(String[] args) {
         int num = 1;

@@ -1,3 +1,5 @@
+package Ev1;
+
 import java.util.Scanner;
 import java.util.Random;
 
