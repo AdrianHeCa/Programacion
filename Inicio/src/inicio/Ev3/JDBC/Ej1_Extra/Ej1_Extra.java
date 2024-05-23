@@ -13,7 +13,7 @@ public class Ej1_Extra {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/p";
         
-        JFrame ventana = new JFrame("Battleship");
+        JFrame ventana = new JFrame("Ej1 Extra");
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ventana.setBounds((int)tamañoPantalla.getWidth()/2 - 250, (int)tamañoPantalla.getHeight()/2 - 250, 500, 250);
         
